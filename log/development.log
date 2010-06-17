@@ -1,0 +1,2416 @@
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (74.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (51.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStates (20100430150433)
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "abbr" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100430150433')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("states")[0m
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 10:13:12) [GET]
+  [4;36;1mState Load (9.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 2602ms (View: 2586, DB: 9) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#show (for 127.0.0.1 at 2010-04-30 10:16:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 22ms (View: 15, DB: 0) | 200 OK [http://localhost/states/1]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 10:41:21) [GET]
+  [4;36;1mState Load (4.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 297ms (View: 285, DB: 4) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 12:09:28) [GET]
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 323ms (View: 307, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 12:09:30) [GET]
+  [4;35;1mState Load (7.0ms)[0m   [0mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 316ms (View: 300, DB: 7) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 12:13:20) [GET]
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 241ms (View: 227, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 12:29:50) [GET]
+  [4;35;1mState Load (6.0ms)[0m   [0mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #3 of app/views/states/index.html.erb:
+1: <% title "States" %>
+2: 
+3: <%= text_field_with_auto_complete :post, title %>
+4: 
+5: <%= link_to_remote t('Button.Navigation.Questions'), :update => 'viewport', :url => {:controller => 'questions', :action => 'index'}, :method => 'get' %>
+6: <table>
+
+    app/views/states/index.html.erb:3:in `title'
+    app/views/states/index.html.erb:3
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (135.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 12:30:10) [GET]
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 233ms (View: 221, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 12:30:35) [GET]
+  [4;35;1mState Load (5.0ms)[0m   [0mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 383ms (View: 370, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-30 12:31:42) [GET]
+
+ArgumentError (wrong number of arguments (1 for 2)):
+  app/controllers/states_controller.rb:2:in `auto_complete_for'
+  app/controllers/states_controller.rb:2
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-30 12:31:52) [GET]
+
+ArgumentError (wrong number of arguments (1 for 2)):
+  app/controllers/states_controller.rb:2:in `auto_complete_for'
+  app/controllers/states_controller.rb:2
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-30 12:31:59) [GET]
+
+ArgumentError (wrong number of arguments (1 for 2)):
+  app/controllers/states_controller.rb:2:in `auto_complete_for'
+  app/controllers/states_controller.rb:2
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (106.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-30 12:32:00) [GET]
+
+ArgumentError (wrong number of arguments (1 for 2)):
+  app/controllers/states_controller.rb:2:in `auto_complete_for'
+  app/controllers/states_controller.rb:2
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (60.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-30 12:32:06) [GET]
+
+ArgumentError (wrong number of arguments (1 for 2)):
+  app/controllers/states_controller.rb:2:in `auto_complete_for'
+  app/controllers/states_controller.rb:2
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-30 12:32:07) [GET]
+
+ArgumentError (wrong number of arguments (1 for 2)):
+  app/controllers/states_controller.rb:2:in `auto_complete_for'
+  app/controllers/states_controller.rb:2
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 12:32:19) [GET]
+  [4;36;1mState Load (102.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 382ms (View: 271, DB: 102) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 13:39:25) [GET]
+  [4;36;1mState Load (12.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 269ms (View: 249, DB: 12) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#auto_complete_for_name_abbr (for 127.0.0.1 at 2010-04-30 13:39:28) [POST]
+  Parameters: {"name"=>{"abbr"=>"a"}, "_"=>""}
+
+NameError (uninitialized constant Name):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (126.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#auto_complete_for_name_abbr (for 127.0.0.1 at 2010-04-30 13:39:29) [POST]
+  Parameters: {"name"=>{"abbr"=>"A"}, "_"=>""}
+
+NameError (uninitialized constant Name):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#auto_complete_for_name_abbr (for 127.0.0.1 at 2010-04-30 13:39:31) [POST]
+  Parameters: {"name"=>{"abbr"=>"AL"}, "_"=>""}
+
+NameError (uninitialized constant Name):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 13:41:52) [GET]
+  [4;35;1mState Load (6.0ms)[0m   [0mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 317ms (View: 301, DB: 6) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#auto_complete_for_state_name (for 127.0.0.1 at 2010-04-30 13:41:54) [POST]
+  Parameters: {"_"=>"", "state"=>{"name"=>"A"}}
+
+ActionController::UnknownAction (No action responded to auto_complete_for_state_name. Actions: auto_complete_for_name_abbr, create, destroy, edit, index, new, show, and update):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#auto_complete_for_state_name (for 127.0.0.1 at 2010-04-30 13:41:57) [POST]
+  Parameters: {"_"=>"", "state"=>{"name"=>"A"}}
+
+ActionController::UnknownAction (No action responded to auto_complete_for_state_name. Actions: auto_complete_for_name_abbr, create, destroy, edit, index, new, show, and update):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#auto_complete_for_state_name (for 127.0.0.1 at 2010-04-30 13:42:06) [POST]
+  Parameters: {"_"=>"", "state"=>{"name"=>"AB"}}
+
+ActionController::UnknownAction (No action responded to auto_complete_for_state_name. Actions: auto_complete_for_name_abbr, create, destroy, edit, index, new, show, and update):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 13:43:15) [GET]
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 337ms (View: 319, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#auto_complete_for_state_name (for 127.0.0.1 at 2010-04-30 13:43:19) [POST]
+  Parameters: {"_"=>"", "state"=>{"name"=>"A"}}
+
+ActionController::UnknownAction (No action responded to auto_complete_for_state_name. Actions: auto_complete_for_state_abbr, create, destroy, edit, index, new, show, and update):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#auto_complete_for_state_name (for 127.0.0.1 at 2010-04-30 13:43:19) [POST]
+  Parameters: {"_"=>"", "state"=>{"name"=>"AB"}}
+
+ActionController::UnknownAction (No action responded to auto_complete_for_state_name. Actions: auto_complete_for_state_abbr, create, destroy, edit, index, new, show, and update):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#auto_complete_for_state_name (for 127.0.0.1 at 2010-04-30 13:43:25) [POST]
+  Parameters: {"_"=>"", "state"=>{"name"=>"A"}}
+
+ActionController::UnknownAction (No action responded to auto_complete_for_state_name. Actions: auto_complete_for_state_abbr, create, destroy, edit, index, new, show, and update):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#auto_complete_for_state_name (for 127.0.0.1 at 2010-04-30 13:43:26) [POST]
+  Parameters: {"_"=>"", "state"=>{"name"=>"AL"}}
+
+ActionController::UnknownAction (No action responded to auto_complete_for_state_name. Actions: auto_complete_for_state_abbr, create, destroy, edit, index, new, show, and update):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 13:47:47) [GET]
+  [4;35;1mState Load (5.0ms)[0m   [0mSELECT * FROM "states" [0m
+Rendering states/index
+Completed in 32ms (View: 14, DB: 5) | 200 OK [http://localhost/states.js]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 13:48:29) [GET]
+  Parameters: {"search"=>"alabama"}
+  [4;36;1mState Load (12.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering states/index
+Completed in 27ms (View: 4, DB: 12) | 200 OK [http://localhost/states.js?search=alabama]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 13:48:41) [GET]
+  Parameters: {"search"=>"alabama"}
+  [4;35;1mState Load (8.0ms)[0m   [0mSELECT * FROM "states" [0m
+Rendering states/index
+Completed in 24ms (View: 6, DB: 8) | 200 OK [http://localhost/states.js?search=alabama]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 13:50:24) [GET]
+  Parameters: {"search"=>"alabama"}
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering states/index
+Completed in 17ms (View: 3, DB: 5) | 200 OK [http://localhost/states.js?search=alabama]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 13:52:34) [GET]
+  Parameters: {"search"=>"alabama"}
+  [4;35;1mState Load (6.0ms)[0m   [0mSELECT * FROM "states" [0m
+Rendering states/index
+Completed in 22ms (View: 4, DB: 6) | 200 OK [http://localhost/states.js?search=alabama]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 13:57:01) [GET]
+  [4;36;1mState Load (8.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+DEPRECATION WARNING: formatted_states_path() has been deprecated. Please pass format to the standard states_path method instead.. (called from _run_erb_app47views47states47index46html46erb at C:/AppWin32/rails_apps/ac_states/app/views/states/index.html.erb:3)
+Completed in 236ms (View: 212, DB: 8) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 13:57:08) [GET]
+  [4;35;1mState Load (5.0ms)[0m   [0mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+DEPRECATION WARNING: formatted_states_path() has been deprecated. Please pass format to the standard states_path method instead.. (called from _run_erb_app47views47states47index46html46erb at C:/AppWin32/rails_apps/ac_states/app/views/states/index.html.erb:3)
+Completed in 285ms (View: 272, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-30 13:58:05) [GET]
+
+SyntaxError (C:/AppWin32/rails_apps/ac_states/app/controllers/states_controller.rb:14: syntax error, unexpected '}', expecting ']'
+... LIKE ?', "%#{params[:search[}%"])
+                              ^
+C:/AppWin32/rails_apps/ac_states/app/controllers/states_controller.rb:28: syntax error, unexpected tCONSTANT, expecting '}'
+      flash[:notice] = "Successfully created state."
+                                    ^
+C:/AppWin32/rails_apps/ac_states/app/controllers/states_controller.rb:28: syntax error, unexpected tSTRING_BEG
+C:/AppWin32/rails_apps/ac_states/app/controllers/states_controller.rb:42: syntax error, unexpected tCONSTANT, expecting '}'
+      flash[:notice] = "Successfully updated state."
+                                    ^
+C:/AppWin32/rails_apps/ac_states/app/controllers/states_controller.rb:42: syntax error, unexpected tSTRING_BEG
+C:/AppWin32/rails_apps/ac_states/app/controllers/states_controller.rb:52: syntax error, unexpected tCONSTANT, expecting '}'
+    flash[:notice] = "Successfully destroyed state."
+                                  ^
+C:/AppWin32/rails_apps/ac_states/app/controllers/states_controller.rb:52: syntax error, unexpected tSTRING_BEG
+C:/AppWin32/rails_apps/ac_states/app/controllers/states_controller.rb:52: unterminated string meets end of file):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (75.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 13:58:16) [GET]
+  [4;36;1mState Load (4.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+DEPRECATION WARNING: formatted_states_path() has been deprecated. Please pass format to the standard states_path method instead.. (called from _run_erb_app47views47states47index46html46erb at C:/AppWin32/rails_apps/ac_states/app/views/states/index.html.erb:3)
+  [4;35;1mState Load (4.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Completed in 331ms (View: 311, DB: 8) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 13:58:21) [GET]
+  [4;36;1mState Load (8.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+DEPRECATION WARNING: formatted_states_path() has been deprecated. Please pass format to the standard states_path method instead.. (called from _run_erb_app47views47states47index46html46erb at C:/AppWin32/rails_apps/ac_states/app/views/states/index.html.erb:3)
+  [4;35;1mState Load (7.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Completed in 254ms (View: 226, DB: 15) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 13:58:53) [GET]
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+DEPRECATION WARNING: formatted_states_path() has been deprecated. Please pass format to the standard states_path method instead.. (called from _run_erb_app47views47states47index46html46erb at C:/AppWin32/rails_apps/ac_states/app/views/states/index.html.erb:3)
+  [4;35;1mState Load (4.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Completed in 252ms (View: 232, DB: 9) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 13:59:09) [GET]
+  [4;36;1mState Load (7.0ms)[0m   [0;1mSELECT * FROM "states" [0m
+Rendering template within layouts/application
+Rendering states/index
+  [4;35;1mState Load (21.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Completed in 450ms (View: 399, DB: 28) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:02:19) [GET]
+  [4;36;1mState Load (13.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 314ms (View: 287, DB: 13) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:02:28) [GET]
+  [4;35;1mState Load (7.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Completed in 18ms (View: 1, DB: 7) | 406 Not Acceptable [http://localhost/states.js]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:02:56) [GET]
+  [4;36;1mState Load (6.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Completed in 19ms (View: 1, DB: 6) | 406 Not Acceptable [http://localhost/states.js]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:03:03) [GET]
+  [4;35;1mState Load (18.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering states/index
+Completed in 50ms (View: 8, DB: 18) | 200 OK [http://localhost/states.js]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:03:19) [GET]
+  Parameters: {"search"=>"alabama"}
+  [4;36;1mState Load (2.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%alabama%') [0m
+Rendering states/index
+Completed in 28ms (View: 8, DB: 2) | 200 OK [http://localhost/states.js?search=alabama]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:03:26) [GET]
+  Parameters: {"search"=>"ala"}
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ala%') [0m
+Rendering states/index
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/states.js?search=ala]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:03:40) [GET]
+  [4;36;1mState Load (15.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 317ms (View: 279, DB: 15) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:03:45) [GET]
+  Parameters: {"search"=>"ala"}
+  [4;35;1mState Load (2.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ala%') [0m
+Rendering states/index
+Completed in 25ms (View: 7, DB: 2) | 200 OK [http://localhost/states.js?search=ala]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:04:30) [GET]
+  Parameters: {"search"=>"ba"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ba%') [0m
+Rendering states/index
+Completed in 13ms (View: 3, DB: 1) | 200 OK [http://localhost/states.js?search=ba]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:04:30) [GET]
+  Parameters: {"search"=>"ba"}
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ba%') [0m
+Rendering states/index
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/states.js?search=ba]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:04:36) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;36;1mState Load (0.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:04:36) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:04:46) [GET]
+  Parameters: {"search"=>"A"}
+  [4;36;1mState Load (6.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 28ms (View: 4, DB: 6) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:06:29) [GET]
+  [4;35;1mState Load (5.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+ERROR: compiling _run_erb_app47views47states47index46html46erb RAISED compile error
+C:/AppWin32/rails_apps/ac_states/app/views/states/index.html.erb:26: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47states47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  title "States" ; @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+ form_tag "/states" ; @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( text_field_with_auto_complete :state, :name, {:size => 15}, {:url => states_path(:js), :method => :get, :with => "'search=' + element.value"} ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( submit_tag ).to_s); @output_buffer.concat "\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<table>\n"
+@output_buffer.concat "  <tr>\n"
+@output_buffer.concat "    <th>Name</th>\n"
+@output_buffer.concat "    <th>Abbr</th>\n"
+@output_buffer.concat "  </tr>\n"
+@output_buffer.concat "  ";  for state in @states ; @output_buffer.concat "\n"
+@output_buffer.concat "    <tr>\n"
+@output_buffer.concat "      <td>"; @output_buffer.concat((h state.name ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "      <td>"; @output_buffer.concat((h state.abbr ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "      <td>"; @output_buffer.concat(( link_to "Show", state ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "      <td>"; @output_buffer.concat(( link_to "Edit", edit_state_path(state) ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "      <td>"; @output_buffer.concat(( link_to "Destroy", state, :confirm => 'Are you sure?', :method => :delete ).to_s); @output_buffer.concat "</td>\n"
+@output_buffer.concat "    </tr>\n"
+@output_buffer.concat "  ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "</table>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<p>"; @output_buffer.concat(( link_to "New State", new_state_path ).to_s); @output_buffer.concat "</p>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: C:/AppWin32/rails_apps/ac_states/app/views/states/index.html.erb:26:in `compile!'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+C:/AppWin32/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+C:/AppWin32/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+C:/AppWin32/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+C:/AppWin32/rails_apps/ac_states/app/views/states/index.html.erb:26: syntax error, unexpected kENSURE, expecting $end) on line #26 of app/views/states/index.html.erb:
+23: 
+24: <p><%= link_to "New State", new_state_path %></p>
+
+    app/views/states/index.html.erb:26:in `compile!'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:07:27) [GET]
+  [4;36;1mState Load (6.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 399ms (View: 385, DB: 6) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:07:35) [GET]
+  [4;35;1mState Load (5.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 224ms (View: 210, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:07:38) [GET]
+  Parameters: {"search"=>"A"}
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 19ms (View: 5, DB: 5) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:07:39) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 15ms (View: 4, DB: 1) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#create (for 127.0.0.1 at 2010-04-30 14:07:43) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"Feywg/mxfjvtvLHTlECFDV2FvgjsReidfE9vxTWJMZs=", "state"=>{"name"=>"ALASKA"}}
+  [4;36;1mState Create (1.0ms)[0m   [0;1mINSERT INTO "states" ("name", "updated_at", "abbr", "created_at") VALUES('ALASKA', '2010-04-30 19:07:43', NULL, '2010-04-30 19:07:43')[0m
+Redirected to http://localhost:3000/states/60
+Completed in 49ms (DB: 1) | 302 Found [http://localhost/states]
+
+
+Processing StatesController#show (for 127.0.0.1 at 2010-04-30 14:07:43) [GET]
+  Parameters: {"id"=>"60"}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."id" = 60) [0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 42ms (View: 25, DB: 1) | 200 OK [http://localhost/states/60]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:09:22) [GET]
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 407ms (View: 394, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:10:07) [GET]
+  [4;35;1mState Load (6.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 255ms (View: 239, DB: 6) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:10:34) [GET]
+  Parameters: {"search"=>"AL"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%AL%') [0m
+Rendering states/index
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/states.js?search=AL]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:10:38) [GET]
+  Parameters: {"commit"=>"Search", "state"=>{"name"=>"ALASKA"}}
+  [4;35;1mState Load (5.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 203ms (View: 191, DB: 5) | 200 OK [http://localhost/states?state%5Bname%5D=ALASKA&commit=Search]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:10:53) [GET]
+  Parameters: {"search"=>"BAMA"}
+  [4;36;1mState Load (0.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%BAMA%') [0m
+Rendering states/index
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/states.js?search=BAMA]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:10:55) [GET]
+  Parameters: {"commit"=>"Search", "state"=>{"name"=>"BAMA"}}
+  [4;35;1mState Load (5.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 327ms (View: 314, DB: 5) | 200 OK [http://localhost/states?state%5Bname%5D=BAMA&commit=Search]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:11:13) [GET]
+  Parameters: {"search"=>"A"}
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 21ms (View: 4, DB: 5) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:11:15) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:11:19) [GET]
+  Parameters: {"commit"=>"Search", "state"=>{"name"=>"ALA"}}
+  [4;36;1mState Load (6.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 262ms (View: 241, DB: 6) | 200 OK [http://localhost/states?state%5Bname%5D=ALA&commit=Search]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:11:30) [GET]
+  Parameters: {"commit"=>"Search", "state"=>{"name"=>"ALA"}}
+  [4;35;1mState Load (4.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 369ms (View: 357, DB: 4) | 200 OK [http://localhost/states?state%5Bname%5D=ALA&commit=Search]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:11:33) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:11:35) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"Feywg/mxfjvtvLHTlECFDV2FvgjsReidfE9vxTWJMZs=", "state"=>{"name"=>"ALASKA"}}
+  [4;35;1mState Load (6.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 342ms (View: 329, DB: 6) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:12:39) [GET]
+  Parameters: {"search"=>"A"}
+  [4;36;1mState Load (4.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 15ms (View: 3, DB: 4) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:12:46) [GET]
+  Parameters: {"search"=>"CALIFORNIA"}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%CALIFORNIA%') [0m
+Rendering states/index
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/states.js?search=CALIFORNIA]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:12:46) [GET]
+  Parameters: {"search"=>"CALIFORNIA"}
+  [4;36;1mState Load (0.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%CALIFORNIA%') [0m
+Rendering states/index
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/states.js?search=CALIFORNIA]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:13:02) [GET]
+  Parameters: {"search"=>"AAAA"}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%AAAA%') [0m
+Rendering states/index
+Completed in 13ms (View: 2, DB: 1) | 200 OK [http://localhost/states.js?search=AAAA]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:13:03) [GET]
+  Parameters: {"search"=>"AAAA"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%AAAA%') [0m
+Rendering states/index
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/states.js?search=AAAA]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:14:54) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"Feywg/mxfjvtvLHTlECFDV2FvgjsReidfE9vxTWJMZs=", "state"=>{"name"=>"ALASKA"}}
+  [4;35;1mState Load (9.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 249ms (View: 228, DB: 9) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:14:57) [GET]
+  Parameters: {"search"=>"A"}
+  [4;36;1mState Load (17.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+
+ActionView::TemplateError (undefined local variable or method `name' for #<ActionView::Base:0xe69f268>) on line #1 of app/views/states/index.js.erb:
+1: <%= auto_complete_result @states, "#{name}" %>
+
+    app/views/states/index.js.erb:1
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (60.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:14:58) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+
+ActionView::TemplateError (undefined local variable or method `name' for #<ActionView::Base:0xe53619c>) on line #1 of app/views/states/index.js.erb:
+1: <%= auto_complete_result @states, "#{name}" %>
+
+    app/views/states/index.js.erb:1
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (152.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:15:00) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+
+ActionView::TemplateError (undefined local variable or method `name' for #<ActionView::Base:0xe6a3e44>) on line #1 of app/views/states/index.js.erb:
+1: <%= auto_complete_result @states, "#{name}" %>
+
+    app/views/states/index.js.erb:1
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (62.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:15:16) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"Feywg/mxfjvtvLHTlECFDV2FvgjsReidfE9vxTWJMZs=", "state"=>{"name"=>"ALASKA"}}
+  [4;35;1mState Load (11.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 284ms (View: 257, DB: 11) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:15:18) [GET]
+  Parameters: {"search"=>"A"}
+  [4;36;1mState Load (4.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 23ms (View: 12, DB: 4) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:15:19) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 10ms (View: 2, DB: 1) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:15:23) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"Feywg/mxfjvtvLHTlECFDV2FvgjsReidfE9vxTWJMZs=", "state"=>{"name"=>"PALAU"}}
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 344ms (View: 331, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:16:24) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:38:46) [GET]
+  Parameters: {"search"=>"A"}
+  [4;36;1mState Load (4.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 15ms (View: 3, DB: 4) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-04-30 14:38:46) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-04-30 14:51:47) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"Feywg/mxfjvtvLHTlECFDV2FvgjsReidfE9vxTWJMZs=", "state"=>{"name"=>"PALAU"}}
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 295ms (View: 283, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 09:50:15) [GET]
+  [4;36;1mState Load (7.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 2804ms (View: 2780, DB: 7) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 09:50:28) [GET]
+  Parameters: {"search"=>"A"}
+  [4;35;1mState Load (4.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 24ms (View: 9, DB: 4) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 09:50:30) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 9ms (View: 2, DB: 1) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#edit (for 127.0.0.1 at 2010-06-09 09:52:38) [GET]
+  Parameters: {"id"=>"60"}
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."id" = 60) [0m
+Rendering template within layouts/application
+Rendering states/edit
+Rendered states/_form (7.0ms)
+Completed in 33ms (View: 26, DB: 0) | 200 OK [http://localhost/states/60/edit]
+
+
+Processing StatesController#update (for 127.0.0.1 at 2010-06-09 09:52:42) [PUT]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "id"=>"60", "state"=>{"name"=>"ALASKA", "abbr"=>"AL"}}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."id" = 60) [0m
+  [4;35;1mState Update (1.0ms)[0m   [0mUPDATE "states" SET "abbr" = 'AL', "updated_at" = '2010-06-09 14:52:42' WHERE "id" = 60[0m
+Redirected to http://localhost:3000/states/60
+Completed in 143ms (DB: 2) | 302 Found [http://localhost/states/60]
+
+
+Processing StatesController#show (for 127.0.0.1 at 2010-06-09 09:52:42) [GET]
+  Parameters: {"id"=>"60"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."id" = 60) [0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 32ms (View: 24, DB: 1) | 200 OK [http://localhost/states/60]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 09:52:44) [GET]
+  [4;35;1mState Load (5.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 309ms (View: 296, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 09:52:47) [GET]
+  Parameters: {"search"=>"A"}
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 15ms (View: 4, DB: 5) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 09:52:48) [GET]
+  Parameters: {"search"=>"W"}
+  [4;35;1mState Load (4.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%W%') [0m
+Rendering states/index
+Completed in 18ms (View: 6, DB: 4) | 200 OK [http://localhost/states.js?search=W]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 09:52:50) [GET]
+  Parameters: {"search"=>"WY"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%WY%') [0m
+Rendering states/index
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/states.js?search=WY]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 09:52:55) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"WYOMING"}}
+  [4;35;1mState Load (6.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 220ms (View: 206, DB: 6) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 09:55:47) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"WYOMING"}}
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 361ms (View: 345, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 09:55:51) [GET]
+  Parameters: {"search"=>"A"}
+  [4;35;1mState Load (4.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 18ms (View: 3, DB: 4) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 09:55:52) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#update (for 127.0.0.1 at 2010-06-09 09:55:54) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "id"=>"show", "state"=>{"name"=>"ALASKA"}}
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find State with ID=show):
+  app/controllers/states_controller.rb:29:in `update'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (54.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#update (for 127.0.0.1 at 2010-06-09 09:58:21) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "id"=>"show", "state"=>{"name"=>"ALASKA"}}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find State with ID=show):
+  app/controllers/states_controller.rb:29:in `update'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 09:58:24) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"WYOMING"}}
+  [4;35;1mState Load (4.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 211ms (View: 197, DB: 4) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 09:58:28) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #1 of app/views/states/index.js.erb:
+1: <%= auto_complete_result @states, :name, :id %>
+
+    app/views/states/index.js.erb:1
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (75.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 09:58:29) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #1 of app/views/states/index.js.erb:
+1: <%= auto_complete_result @states, :name, :id %>
+
+    app/views/states/index.js.erb:1
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (58.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 09:58:30) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+
+ActionView::TemplateError (can't convert Symbol into String) on line #1 of app/views/states/index.js.erb:
+1: <%= auto_complete_result @states, :name, :id %>
+
+    app/views/states/index.js.erb:1
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (56.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 09:58:47) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"WYOMING"}}
+  [4;35;1mState Load (6.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 274ms (View: 258, DB: 6) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 09:58:49) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;36;1mState Load (0.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 09:58:50) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 10:01:33) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"WYOMING"}}
+  [4;36;1mState Load (4.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 265ms (View: 252, DB: 4) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 10:01:36) [GET]
+  Parameters: {"search"=>"ALAA"}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ALAA%') [0m
+Rendering states/index
+Completed in 16ms (View: 4, DB: 1) | 200 OK [http://localhost/states.js?search=ALAA]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 10:01:37) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#update (for 127.0.0.1 at 2010-06-09 10:01:40) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "id"=>"show", "state"=>{"name"=>"ALASKA"}}
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find State with ID=show):
+  app/controllers/states_controller.rb:30:in `update'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#update (for 127.0.0.1 at 2010-06-09 10:03:07) [PUT]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "id"=>"show", "state"=>{"name"=>"ALASKA"}}
+  [4;36;1mState Load (0.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find State with ID=show):
+  app/controllers/states_controller.rb:31:in `update'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 10:03:54) [GET]
+  [4;35;1mState Load (4.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 309ms (View: 297, DB: 4) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 10:04:06) [GET]
+  Parameters: {"search"=>"ARI"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ARI%') [0m
+Rendering states/index
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/states.js?search=ARI]
+
+
+Processing StatesController#show (for 127.0.0.1 at 2010-06-09 10:04:14) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "method"=>"put", "state"=>{"name"=>"ARIZONA"}}
+SHOW --> 
+
+ActiveRecord::RecordNotFound (Couldn't find State without an ID):
+  app/controllers/states_controller.rb:8:in `show'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (51.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#show (for 127.0.0.1 at 2010-06-09 10:06:21) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "method"=>"put", "state"=>{"name"=>"ARIZONA"}}
+SHOW --> 
+
+ActiveRecord::RecordNotFound (Couldn't find State without an ID):
+  app/controllers/states_controller.rb:8:in `show'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#show (for 127.0.0.1 at 2010-06-09 10:06:28) [GET]
+  Parameters: {"id"=>"4"}
+SHOW --> 4
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/states/4]
+
+
+Processing StatesController#show (for 127.0.0.1 at 2010-06-09 10:07:02) [GET]
+  Parameters: {"id"=>"4"}
+SHOW --> 4 --> String
+  [4;36;1mState Load (0.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 22ms (View: 14, DB: 0) | 200 OK [http://localhost/states/4]
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:23:16) [GET]
+  Parameters: {"id"=>"ARIZONA"}
+SHOW --> ARIZONA --> String
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."name" = 'ARIZONA') LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template states/show_for_autocompleter.erb in view path app/views):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:23:40) [GET]
+  Parameters: {"id"=>"ARIZONA"}
+SHOW --> ARIZONA --> String
+  [4;36;1mState Load (0.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."name" = 'ARIZONA') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 21ms (View: 14, DB: 0) | 200 OK [http://localhost/states/show_for_autocompleter/ARIZONA]
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:23:42) [GET]
+  Parameters: {"id"=>"ARIZONA"}
+SHOW --> ARIZONA --> String
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."name" = 'ARIZONA') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 26ms (View: 14, DB: 1) | 200 OK [http://localhost/states/show_for_autocompleter/ARIZONA]
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:23:43) [GET]
+  Parameters: {"id"=>"ARIZONA"}
+SHOW --> ARIZONA --> String
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."name" = 'ARIZONA') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://localhost/states/show_for_autocompleter/ARIZONA]
+
+
+Processing StatesController#show (for 127.0.0.1 at 2010-06-09 11:23:51) [GET]
+  Parameters: {"id"=>"1"}
+SHOW --> 1 --> String
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 21ms (View: 12, DB: 0) | 200 OK [http://localhost/states/show/1]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 11:24:00) [GET]
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 225ms (View: 212, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 11:24:22) [GET]
+  [4;35;1mState Load (12.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+
+ActionView::TemplateError (undefined local variable or method `show_for_autocompleter_path' for #<ActionView::Base:0x8f04ad0>) on line #3 of app/views/states/index.html.erb:
+1: <% title "States" %>
+2: 
+3: <% form_tag show_for_autocompleter_path, :method => :put do %>
+4:   <%= text_field_with_auto_complete :state, :name, {:size => 15}, {:url => states_path(:js), :method => :get, :with => "'search=' + element.value"} %>
+5:   <%= submit_tag 'Search' %>
+6: <% end %>
+
+    app/views/states/index.html.erb:3
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (73.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 11:24:42) [GET]
+  [4;36;1mState Load (6.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 242ms (View: 225, DB: 6) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 11:25:36) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 14ms (View: 2, DB: 1) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:25:40) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "method"=>"put", "state"=>{"name"=>"ALASKA"}}
+SHOW -->  --> NilClass
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:14:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (50.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:26:05) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "method"=>"put", "state"=>{"name"=>"ALASKA"}}
+SHOW -->  --> NilClass
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:14:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (155.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:26:14) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "method"=>"put", "state"=>{"name"=>"ALASKA"}}
+SHOW -->  --> NilClass
+  [4;36;1mState Load (0.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:14:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (80.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:26:34) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "method"=>"put", "state"=>{"name"=>"ALASKA"}}
+SHOW -->  --> NilClass
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:14:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (61.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:26:38) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "method"=>"put", "state"=>{"name"=>"ALASKA"}}
+SHOW -->  --> NilClass
+  [4;36;1mState Load (0.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:14:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (68.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:27:01) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "method"=>"put", "state"=>{"name"=>"ALASKA"}}
+SHOW -->  --> NilClass
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:14:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (69.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:27:04) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "method"=>"put", "state"=>{"name"=>"ALASKA"}}
+SHOW -->  --> NilClass
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:14:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (74.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 11:28:28) [GET]
+  [4;35;1mState Load (4.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+
+ActionView::TemplateError (show_for_autocompleter_state_url failed to generate from {:action=>"show_for_autocompleter", :controller=>"states"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["states", :id, "show_for_autocompleter"] - are they all satisfied?) on line #3 of app/views/states/index.html.erb:
+1: <% title "States" %>
+2: 
+3: <% form_tag show_for_autocompleter_state_path do %>
+4:   <%= text_field_with_auto_complete :state, :name, {:size => 15}, {:url => states_path(:js), :method => :get, :with => "'search=' + element.value"} %>
+5:   <%= submit_tag 'Search' %>
+6: <% end %>
+
+    (eval):16:in `show_for_autocompleter_state_path'
+    app/views/states/index.html.erb:3
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 11:28:58) [GET]
+  [4;36;1mState Load (4.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 439ms (View: 427, DB: 4) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 11:29:21) [GET]
+  [4;35;1mState Load (6.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+
+ActionView::TemplateError (show_for_autocompleter_state_url failed to generate from {:action=>"show_for_autocompleter", :controller=>"states"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["states", :id, "show_for_autocompleter"] - are they all satisfied?) on line #3 of app/views/states/index.html.erb:
+1: <% title "States" %>
+2: 
+3: <% form_tag show_for_autocompleter_state_path do %>
+4:   <%= text_field_with_auto_complete :state, :name, {:size => 15}, {:url => states_path(:js), :method => :get, :with => "'search=' + element.value"} %>
+5:   <%= submit_tag 'Search' %>
+6: <% end %>
+
+    (eval):16:in `show_for_autocompleter_state_path'
+    app/views/states/index.html.erb:3
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (163.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 11:29:38) [GET]
+  [4;36;1mState Load (5.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 232ms (View: 218, DB: 5) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 11:29:45) [GET]
+  Parameters: {"search"=>"ALASKA"}
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ALASKA%') [0m
+Rendering states/index
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/states.js?search=ALASKA]
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:29:46) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+SHOW -->  --> NilClass
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:14:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (54.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:30:37) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "action"=>"show_for_autocompleter", "controller"=>"states", "state"=>{"name"=>"ALASKA"}}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:14:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:30:42) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "action"=>"show_for_autocompleter", "controller"=>"states", "state"=>{"name"=>"ALASKA"}}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:14:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (81.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:31:31) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "action"=>"show_for_autocompleter", "controller"=>"states", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> nameALASKA
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:15:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (71.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:31:57) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "action"=>"show_for_autocompleter", "controller"=>"states", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> STATE --> nameALASKA
+  [4;36;1mState Load (0.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:15:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (129.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:32:17) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "action"=>"show_for_autocompleter", "controller"=>"states", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> STATE --> ALASKA
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:15:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (76.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:32:51) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "action"=>"show_for_autocompleter", "controller"=>"states", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> STATE --> ALASKA
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:15:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (126.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:33:02) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "action"=>"show_for_autocompleter", "controller"=>"states", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> STATE --> ALASKA
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."name" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #5 of app/views/states/show.html.erb:
+2: 
+3: <p>
+4:   <strong>Name:</strong>
+5:   <%=h @state.name %>
+6: </p>
+7: <p>
+8:   <strong>Abbr:</strong>
+
+    app/views/states/show.html.erb:5
+    app/controllers/states_controller.rb:15:in `show_for_autocompleter'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (71.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:33:18) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "action"=>"show_for_autocompleter", "controller"=>"states", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> STATE --> ALASKA
+  [4;36;1mState Load (0.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."name" = 'ALASKA') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/states/show_for_autocompleter]
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:33:24) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "action"=>"show_for_autocompleter", "controller"=>"states", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> STATE --> ALASKA
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."name" = 'ALASKA') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 97ms (View: 87, DB: 1) | 200 OK [http://localhost/states/show_for_autocompleter]
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:33:43) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+
+ActionController::UnknownAction (No action responded to show_for_autocompleter. Actions: create, destroy, edit, index, new, show, show_for_ac, and update):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#show_for_autocompleter (for 127.0.0.1 at 2010-06-09 11:33:53) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+
+ActionController::UnknownAction (No action responded to show_for_autocompleter. Actions: create, destroy, edit, index, new, show, show_for_ac, and update):
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/AppWin32/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 11:33:57) [GET]
+  [4;36;1mState Load (19.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 306ms (View: 270, DB: 19) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 11:34:03) [GET]
+  [4;35;1mState Load (14.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 363ms (View: 332, DB: 14) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 11:34:05) [GET]
+  Parameters: {"search"=>"A"}
+  [4;36;1mState Load (6.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 32ms (View: 8, DB: 6) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 11:34:05) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 86ms (View: 10, DB: 1) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#show_for_ac (for 127.0.0.1 at 2010-06-09 11:34:06) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "action"=>"show_for_ac", "controller"=>"states", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> STATE --> ALASKA
+  [4;36;1mState Load (2.0ms)[0m   [0;1mSELECT * FROM "states" WHERE ("states"."name" = 'ALASKA') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 48ms (View: 15, DB: 2) | 200 OK [http://localhost/states/show_for_ac]
+
+
+Processing StatesController#show_for_ac (for 127.0.0.1 at 2010-06-09 11:34:09) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> {"commit"=>"Search", "authenticity_token"=>"lWJ7sq80J580nt8CiEs/7J0hHCXZ0VHFWllROvpEFGY=", "action"=>"show_for_ac", "controller"=>"states", "state"=>{"name"=>"ALASKA"}}
+show_for_autocompleter --> STATE --> ALASKA
+  [4;35;1mState Load (0.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."name" = 'ALASKA') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 34ms (View: 18, DB: 0) | 200 OK [http://localhost/states/show_for_ac]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-09 11:43:29) [GET]
+  [4;36;1mState Load (6.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 317ms (View: 301, DB: 6) | 200 OK [http://localhost/states]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 11:43:32) [GET]
+  Parameters: {"search"=>"A"}
+  [4;35;1mState Load (11.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 211ms (View: 186, DB: 11) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 11:43:34) [GET]
+  Parameters: {"search"=>"ala"}
+  [4;36;1mState Load (0.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ala%') [0m
+Rendering states/index
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/states.js?search=ala]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 11:56:44) [GET]
+  Parameters: {"search"=>"ala"}
+  [4;35;1mState Load (1.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ala%') [0m
+Rendering states/index
+Completed in 10ms (View: 2, DB: 1) | 200 OK [http://localhost/states.js?search=ala]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 11:56:44) [GET]
+  Parameters: {"search"=>"A"}
+  [4;36;1mState Load (6.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 27ms (View: 5, DB: 6) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 11:56:45) [GET]
+  Parameters: {"search"=>"ala"}
+  [4;35;1mState Load (2.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%ala%') [0m
+Rendering states/index
+Completed in 18ms (View: 5, DB: 2) | 200 OK [http://localhost/states.js?search=ala]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 11:56:45) [GET]
+  Parameters: {"search"=>"A"}
+  [4;36;1mState Load (19.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 56ms (View: 8, DB: 19) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 11:56:45) [GET]
+  Parameters: {"search"=>"A"}
+  [4;35;1mState Load (8.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 33ms (View: 6, DB: 8) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-09 11:56:47) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;36;1mState Load (1.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 18ms (View: 4, DB: 1) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-17 17:00:04) [GET]
+  [4;36;1mState Load (12.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 3710ms (View: 3651, DB: 12) | 200 OK [http://localhost/]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-17 17:00:16) [GET]
+  Parameters: {"search"=>"A"}
+  [4;35;1mState Load (7.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 62ms (View: 18, DB: 7) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-17 17:00:17) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;36;1mState Load (3.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 51ms (View: 10, DB: 3) | 200 OK [http://localhost/states.js?search=ALA]
+
+
+Processing StatesController#show_for_ac (for 127.0.0.1 at 2010-06-17 17:00:21) [POST]
+  Parameters: {"commit"=>"Search", "authenticity_token"=>"m3uIOD8Qk8e8RmyhNgF8YsOUbts2F93KZwqukLOWEkE=", "state"=>{"name"=>"PALAU"}}
+  [4;35;1mState Load (2.0ms)[0m   [0mSELECT * FROM "states" WHERE ("states"."name" = 'PALAU') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering states/show
+Completed in 270ms (View: 47, DB: 2) | 200 OK [http://localhost/states/show_for_ac]
+
+
+Processing StatesController#index (for 127.0.0.1 at 2010-06-17 17:02:48) [GET]
+  [4;36;1mState Load (6.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%%') [0m
+Rendering template within layouts/application
+Rendering states/index
+Completed in 310ms (View: 293, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-17 17:02:51) [GET]
+  Parameters: {"search"=>"A"}
+  [4;35;1mState Load (5.0ms)[0m   [0mSELECT * FROM "states" WHERE (name LIKE '%A%') [0m
+Rendering states/index
+Completed in 25ms (View: 10, DB: 5) | 200 OK [http://localhost/states.js?search=A]
+
+
+Processing StatesController#index to js (for 127.0.0.1 at 2010-06-17 17:02:53) [GET]
+  Parameters: {"search"=>"ALA"}
+  [4;36;1mState Load (3.0ms)[0m   [0;1mSELECT * FROM "states" WHERE (name LIKE '%ALA%') [0m
+Rendering states/index
+Completed in 29ms (View: 8, DB: 3) | 200 OK [http://localhost/states.js?search=ALA]

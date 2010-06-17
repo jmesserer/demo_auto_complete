@@ -1,0 +1,24 @@
+<% title "States" %>
+
+<% form_tag :action => :show_for_ac do %>
+  <%= text_field_with_auto_complete :state, :name, {:size => 15}, {:url => states_path(:js), :method => :get, :with => "'search=' + element.value"} %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Abbr</th>
+  </tr>
+  <% for state in @states %>
+    <tr>
+      <td><%=h state.name %></td>
+      <td><%=h state.abbr %></td>
+      <td><%= link_to "Show", state %></td>
+      <td><%= link_to "Edit", edit_state_path(state) %></td>
+      <td><%= link_to "Destroy", state, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New State", new_state_path %></p>
